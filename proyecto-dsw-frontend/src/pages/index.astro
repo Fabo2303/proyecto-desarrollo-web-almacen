@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Bienvenido al almacen.">
+    <div id="background"></div>
+    <div
+        class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] bg-yellow-600 p-5 flex flex-col gap-5 rounded-xl"
+    >
+        <h1 class="text-center text-2xl">
+            Bienvenido al sistema de almacen
+        </h1>
+        <button class="text-center bg-red-700 p-2 text-2xl"
+            ><a href="/login">Iniciar Sesión</a></button
+        >
+    </div>
+</Layout>
+
+<style>
+    #background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-size: cover;
+        background-position: center;
+        filter: blur(3px);
+    }
+</style>

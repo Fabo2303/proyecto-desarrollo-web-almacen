@@ -1,0 +1,68 @@
+---
+import AsideMenu from '../components/astro-component/AsideMenu.astro';
+
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Astro description" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body id="app">
+        <header class="bg-orange-700 text-center text-2xl py-1">
+            <h1>ALMACEN S.A</h1>
+        </header>
+        <div id="main">
+            <aside class="bg-slate-900">
+                <AsideMenu />
+            </aside>
+            <main>
+                <div id="background"></div>
+                <slot />
+            </main>
+        </div>
+        <footer class="bg-red-700 text-center text-2xl py-1">
+            <p>© 2024 grupo 3 </p>
+        </footer>
+    </body>
+</html>
+
+<style>
+    #app {
+        display: grid;
+        grid-template-areas: "header" "div" "footer";
+        grid-template-rows: auto 1fr auto;
+        height: 100vh;
+    }
+
+    #main {
+        display: grid;
+        grid-template-areas: "aside main";
+        grid-template-columns: 200px 1fr;
+        height: 100%;
+    }
+
+    #background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url("/fondo-index-almacen.webp");
+        background-size: cover;
+        background-position: center;
+        filter: blur(3px);
+    }
+</style>
+
+<style is:global></style>

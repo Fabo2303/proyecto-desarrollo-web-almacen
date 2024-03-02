@@ -1,0 +1,13 @@
+---
+import LayoutInner from "../layouts/LayoutInner.astro";
+import TableInventario from "src/components/react-component/TableInventario.tsx";
+---
+
+<LayoutInner title="Inventario">
+    <div class="h-full relative flex flex-col">
+        <h1 class="text-5xl text-center font-bold bg-slate-400">
+            INVENTARIO
+        </h1>
+        <TableInventario client:load />
+    </div>
+</LayoutInner>

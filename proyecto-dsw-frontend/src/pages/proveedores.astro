@@ -1,0 +1,14 @@
+---
+import LayoutInner from "src/layouts/LayoutInner.astro"
+
+import TableProveedor from "src/components/react-component/TableProveedor.tsx";
+---
+
+<LayoutInner title="Gestionar Empleados">
+    <div class="h-full relative flex flex-col">
+        <h1 class="text-5xl text-center font-bold bg-slate-400">
+            GESTIONAR PROVEEDORES
+        </h1>
+        <TableProveedor client:load/>
+    </div>
+</LayoutInner>

@@ -1,0 +1,44 @@
+---
+import SideMenuItem from "./SideMenuItem.astro";
+import UserIcon from "../../icons/UserIcon.astro";
+import UserDiv from "src/components/react-component/UserDiv.tsx";
+import HomeIcon from "../../icons/HomeIcon.astro";
+import OpenBoxIcon from "../../icons/OpenBoxIcon.astro";
+import BoxIcon from "../../icons/BoxIcon.astro";
+import BoxesIcon from "../../icons/BoxesIcon.astro";
+---
+
+<nav class="flex flex-col">
+    <div class="">
+        <div class="bg-[#51c9b1] py-4 flex flex-col items-center hover:bg-emerald-400">
+            <UserIcon width={80} height={80}/>
+            <UserDiv client:load />
+        </div>
+        <ul class="">
+            <SideMenuItem href="/menu">
+                <HomeIcon width={25} height={25} />
+                Inicio
+            </SideMenuItem>
+            <SideMenuItem href="/entradas">
+                <OpenBoxIcon width={50} height={50} />
+                Registrar Entradas
+            </SideMenuItem>
+            <SideMenuItem href="/salidas">
+                <BoxIcon width={50} height={50}/>
+                Registrar Salidas
+            </SideMenuItem>
+            <SideMenuItem href="/inventario">
+                <BoxesIcon width={50} height={50}/>
+                Inventario
+            </SideMenuItem>
+            <SideMenuItem href="/empleados">
+                <BoxesIcon width={50} height={50}/>
+                Empleados
+            </SideMenuItem>
+            <SideMenuItem href="/proveedores">
+                <BoxesIcon width={50} height={50}/>
+                Proveedores
+            </SideMenuItem>
+        </ul>
+    </div>
+</nav>
